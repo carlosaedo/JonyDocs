@@ -24,8 +24,6 @@ document.querySelector("#game").addEventListener("click", function () {
     } else {
         document.querySelector("h1").innerHTML = "Empate!🥴";
         document.querySelector("h2").innerHTML = "JonyDocs foi aos RH apresentar queixa!!😤";
-        scoreJogador++;
-        scoreJonyDocs++;
         queixas++;
         document.querySelector("#jonyDocs").innerHTML = `JonyDocs: ${scoreJonyDocs}`;
         document.querySelector("#jogador").innerHTML = `Tu: ${scoreJogador}`;
@@ -38,5 +36,22 @@ document.querySelector("#game").addEventListener("click", function () {
         } else {
             document.querySelector("#queixas").innerHTML = `Queixas nos RH: ${queixas} ...Bruh 🥴`;
         }
+    }
+    if (scoreJogador === 25 && scoreJonyDocs < 25) {
+        document.querySelector("h1").innerHTML = "🚩Ganhaste!!😏";
+        document.querySelector("h2").innerHTML = "JonyDocs fechou task: limpar documentos!! Podes ir descansar.";
+        document.querySelector("#game").style.display = "none";
+        document.querySelector(".img1").style.display = "none";
+        document.querySelector(".img2").style.display = "none";
+        document.querySelector("#jogador").innerHTML = `Tu: ${scoreJogador}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;`;
+        document.querySelector("#jonyDocs").innerHTML = `JonyDocs: ${scoreJonyDocs}`;
+    } else if (scoreJonyDocs === 25 && scoreJogador < 25) {
+        document.querySelector("h1").innerHTML = "🚩Perdeste!!🫠";
+        document.querySelector("h2").innerHTML = "JonyDocs adiciou task: limpar documentos!! O DAM foi abaixo🥴";
+        document.querySelector("#game").style.display = "none";
+        document.querySelector(".img1").style.display = "none";
+        document.querySelector(".img2").style.display = "none";
+        document.querySelector("#jogador").innerHTML = `Tu: ${scoreJogador}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;`;
+        document.querySelector("#jonyDocs").innerHTML = `JonyDocs: ${scoreJonyDocs}`;
     }
 });
